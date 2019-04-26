@@ -43,11 +43,12 @@ RCT_EXPORT_METHOD(resetImage:(nonnull NSNumber *)reactTag) {
 	});
 }
 
--(void) publishSaveImageEvent:(NSString *) aTempPath withEncoded: (NSString *) aEncoded {
+-(void) publishSaveImageEvent::(NSString *) aUri (NSString *) aTempPath withEncoded: (NSString *) aEncoded {
 	[self.bridge.eventDispatcher
 	 sendDeviceEventWithName:@"onSaveEvent"
 	 body:@{
 					@"pathName": aTempPath,
+					@"uri": aUri,
 					@"encoded": aEncoded
 					}];
 }
