@@ -215,11 +215,11 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 	UIImage *image = nil;
 	
 	CGSize newImageSize = CGSizeMake(MAX(firstImage.size.width, secondImage.size.width), MAX(firstImage.size.height, secondImage.size.height));
-	if (UIGraphicsBeginImageContextWithOptions != NULL) {
+	// if (UIGraphicsBeginImageContextWithOptions != NULL) {
 		UIGraphicsBeginImageContextWithOptions(newImageSize, NO, [[UIScreen mainScreen] scale]);
-	} else {
-		UIGraphicsBeginImageContext(newImageSize);
-	}
+	// } else {
+	// 	UIGraphicsBeginImageContext(newImageSize);
+	// }
 	[firstImage drawAtPoint:CGPointMake(roundf((newImageSize.width-firstImage.size.width)/2),
 																			roundf((newImageSize.height-firstImage.size.height)/2))];
 	[secondImage drawAtPoint:CGPointMake(roundf((newImageSize.width-secondImage.size.width)/2),
